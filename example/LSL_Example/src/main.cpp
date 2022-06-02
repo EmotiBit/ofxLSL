@@ -1,7 +1,7 @@
 #include "ofMain.h"
 #include "ofApp.h"
 
-const char * ofxLSL::resInletInfo = "name = 'CFL'";
+//const char * ofxLSL::resInletInfo = "name = 'CFL'";
 //========================================================================
 int main() {
 	ofSetupOpenGL(1024, 768, OF_WINDOW);			// <-------- setup the GL context

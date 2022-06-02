@@ -2,6 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup() {
+	ofLogToConsole();
 	ofLogNotice() << "Starting";
 	lsl.start();
 

@@ -27,12 +27,11 @@ struct ofxStability {
 class ofxLSL : public ofThread {
 	
 public:
-	static const char * resInletInfo;
-
+	std::string inletStream;
 	ofxLSL();
 	~ofxLSL() { stop(); };
 	
-	bool start();
+	bool start(std::string streamName = "EmotiBit");
 	bool stop();
 	bool isConnected() {
 		std::lock_guard<std::mutex> lock(mutex);
