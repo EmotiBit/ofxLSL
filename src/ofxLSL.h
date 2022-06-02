@@ -31,7 +31,7 @@ public:
 	ofxLSL();
 	~ofxLSL() { stop(); };
 	
-	bool start(std::string streamName = "EmotiBit");
+	bool start(std::string streamName);
 	bool stop();
 	bool isConnected() {
 		std::lock_guard<std::mutex> lock(mutex);

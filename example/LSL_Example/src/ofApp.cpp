@@ -3,14 +3,15 @@
 //--------------------------------------------------------------
 void ofApp::setup() {
 	ofLogToConsole();
+	ofLogLevel(OF_LOG_VERBOSE);
 	ofLogNotice() << "Starting";
-	lsl.start();
+	lsl.start("name = 'EmotiBit'");
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update() {
-	ofLogLevel(OF_LOG_VERBOSE);
+	
 	//ofLogNotice() << "Updating";
 //	if (lsl.isConnected()) {
 	auto buffer = lsl.flush();
