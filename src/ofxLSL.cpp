@@ -2,9 +2,12 @@
 
 ofxLSL::ofxLSL() : active(false) {}
 
+std::string ofxLSL::getFormattedStreamName(std::string streamName) {
+	return ("name= '" + streamName + "'");
+}
 bool ofxLSL::start(std::string streamName) {
 	if(active) return false;
-	inletStream = streamName;
+	_inletStream = getFormattedStreamName(streamName);
 	thread = std::make_unique<std::thread>(&ofxLSL::update, this);
 	active = true;
 	return true;
@@ -55,7 +58,7 @@ void ofxLSL::disconnect() {
 
 void ofxLSL::connect() {
 	//auto streams = lsl::resolve_stream("desc/correlation", "R", 1, 2.f);
-	auto streams = lsl::resolve_stream(inletStream, 1, 1);
+	auto streams = lsl::resolve_stream(_inletStream, 1, 1);
 	if (streams.size() == 0) {
 		ofLogNotice() << "No Streams Found";
 		return;
@@ -87,7 +90,7 @@ void ofxLSL::connect() {
 				} } } }
 	
 	//auto Qstreams = lsl::resolve_stream("desc/correlation", "Stability", 1, 2.f);
-	auto Qstreams = lsl::resolve_stream(inletStream);
+	auto Qstreams = lsl::resolve_stream(_inletStream);
 	std::vector<lsl::stream_info> resolvedStreams = lsl::resolve_streams(1.0);
 	
 	stabilities.clear();

@@ -26,12 +26,13 @@ struct ofxStability {
 
 class ofxLSL : public ofThread {
 	
+	std::string _inletStream;
 public:
-	std::string inletStream;
 	ofxLSL();
 	~ofxLSL() { stop(); };
 	
 	bool start(std::string streamName);
+	std::string getFormattedStreamName(std::string streamName);
 	bool stop();
 	bool isConnected() {
 		std::lock_guard<std::mutex> lock(mutex);

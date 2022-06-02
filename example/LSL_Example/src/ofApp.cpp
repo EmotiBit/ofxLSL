@@ -5,7 +5,7 @@ void ofApp::setup() {
 	ofLogToConsole();
 	ofLogLevel(OF_LOG_VERBOSE);
 	ofLogNotice() << "Starting";
-	lsl.start("name = 'EmotiBit'");
+	lsl.start("EmotiBit");
 
 }
 
