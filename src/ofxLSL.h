@@ -26,12 +26,17 @@ struct ofxStability {
 
 class ofxLSL : public ofThread {
 	
-	std::string _inletStream;
+	std::string _inletStream; //!< Name of the inletStream
 public:
 	ofxLSL();
 	~ofxLSL() { stop(); };
 	
 	bool start(std::string streamName);
+	/*!
+	@brief function to convert stream name into a format accepted by LSL 
+	@param streamName inlet stream name
+	@return stream name formatted to LSL format
+	*/
 	std::string getFormattedStreamName(std::string streamName);
 	bool stop();
 	bool isConnected() {
