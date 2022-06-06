@@ -17,7 +17,7 @@ from pylsl import StreamInfo, StreamOutlet
 def main():
     """Alternate printing 'Hello' and 'World' and send a trigger each time."""
     # Set up LabStreamingLayer stream.
-    info = StreamInfo(name='EmotiBit', type='Tags', channel_count=1,
+    info = StreamInfo(name='DataSyncMarker', type='Tags', channel_count=1,
                       channel_format='string', source_id='')
     outlet = StreamOutlet(info)  # Broadcast the stream.
 
