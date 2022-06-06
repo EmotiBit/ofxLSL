@@ -5,7 +5,7 @@ void ofApp::setup() {
 	ofLogToConsole();
 	ofLogLevel(OF_LOG_VERBOSE);
 	ofLogNotice() << "Starting";
-	lsl.start("EmotiBit");
+	lsl.start("DataSyncMarker");
 
 }
 

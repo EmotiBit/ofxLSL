@@ -40,7 +40,7 @@ def main():
     hello = visual.TextStim(win, text="Hello")
     world = visual.TextStim(win, text="World")
 
-    for i in range(200):
+    for i in range(200000):
         if not i % 2:  # If i is even:
             hello.draw()
             # # Experiment with win.callOnFlip method. See Psychopy window docs.
