@@ -79,7 +79,20 @@ ipch/
 [Rr]elease*/
 Ankh.NoLoad
 
+# Ignore the standard QT Creator build paths
+build-*
+*/build/*
+
+# Ignore build artifacts for custom addons
+obj/
+bin/
+build/**
+!/data
+
+
 #########################
 # PROJECT
 #########################
 settings.*
+liblsl.*
+libs/labstreaminglayer/include/*
