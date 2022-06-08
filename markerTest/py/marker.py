@@ -17,8 +17,8 @@ from pylsl import StreamInfo, StreamOutlet
 def main():
     """Alternate printing 'Hello' and 'World' and send a trigger each time."""
     # Set up LabStreamingLayer stream.
-    info = StreamInfo(name='CFL', type='Tags', channel_count=1,
-                      channel_format='string', source_id='')
+    info = StreamInfo(name='DataSyncMarker', type='Tags', channel_count=1,
+                      channel_format='string', source_id='12345')
     outlet = StreamOutlet(info)  # Broadcast the stream.
 
     # This is not necessary but can be useful to keep track of markers and the
@@ -40,7 +40,7 @@ def main():
     hello = visual.TextStim(win, text="Hello")
     world = visual.TextStim(win, text="World")
 
-    for i in range(200):
+    for i in range(200000):
         if not i % 2:  # If i is even:
             hello.draw()
             # # Experiment with win.callOnFlip method. See Psychopy window docs.
