@@ -50,6 +50,7 @@ template <typename T>
 class TimedSample {
 public:
   double timeStamp = 0.0;
+  double timeCorrection;  //!< offset to convert merker source time to local computer time. See time_correction() in lsl_cpp.h for more details
   std::vector<T> sample;
 };
 
@@ -65,7 +66,10 @@ public:
     flushSamples.swap(samples);
     return flushSamples;
   }
-
+  double getTimeCorrection(double timeout = lsl::FOREVER)
+  {
+	  return inlet->time_correction(timeout);
+  }
   ~Receiver() { stop(); }
 
 protected:
@@ -75,6 +79,7 @@ protected:
     sampleBuffer->timeStamp = ts;
     if (ts > 0) {
       std::lock_guard<std::mutex> lock(pullMutex);
+	  sampleBuffer->timeCorrection = getTimeCorrection(1);  // update the time correction value when pulling sample
       samples.push_back(sampleBuffer);
       while (samples.size() && samples.size() > sampleCapacity) {
         samples.erase(samples.begin());
