@@ -50,7 +50,7 @@ template <typename T>
 class TimedSample {
 public:
   double timeStamp = 0.0;
-  double timeCorrection;  //!< offset to convert merker source time to local computer time. See time_correction() in lsl_cpp.h for more details
+  double timeCorrection;  //!< offset to convert merker source time to local computer time. For more info: https://github.com/sccn/liblsl/blob/e762b9e10ad0d77651923c0afa7f435af38e8a9b/include/lsl_cpp.h#L1083-L1102
   std::vector<T> sample;
 };
 
@@ -68,6 +68,7 @@ public:
   }
   double getTimeCorrection(double timeout = lsl::FOREVER)
   {
+	  // For more info: https://github.com/sccn/liblsl/blob/e762b9e10ad0d77651923c0afa7f435af38e8a9b/include/lsl_cpp.h#L1083-L1102
 	  return inlet->time_correction(timeout);
   }
   ~Receiver() { stop(); }
