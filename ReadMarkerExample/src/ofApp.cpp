@@ -4,7 +4,7 @@
 void ofApp::setup(){
 	ofLogToConsole();
 	ofSetLogLevel(OF_LOG_VERBOSE);
-	receiveString = std::make_shared<ofxLSL::Receiver<string>>("DataSyncMarker");
+	receiveString = std::make_shared<ofxLSL::Receiver<string>>("DataSyncMarker", "12345");
 }
 
 //--------------------------------------------------------------
@@ -14,7 +14,9 @@ void ofApp::update(){
 		auto lastSample = stringSample.back();
 		auto data = lastSample->sample;
 		if (data.size() >= 1) {
-			ofLog(OF_LOG_NOTICE, ofToString(lastSample->timeStamp, 7) + " : " + data[0]);
+			ofLog(OF_LOG_NOTICE, "TS:" + ofToString(lastSample->timeStamp, 7) + " - " +
+				"timeCorr: " + ofToString(lastSample->timeCorrection, 7)  + " - " + 
+				data[0]);
 		}
 	}
 }

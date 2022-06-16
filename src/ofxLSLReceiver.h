@@ -80,7 +80,7 @@ protected:
     sampleBuffer->timeStamp = ts;
     if (ts > 0) {
       std::lock_guard<std::mutex> lock(pullMutex);
-	  sampleBuffer->timeCorrection = getTimeCorrection(1);  // update the time correction value when pulling sample
+	  sampleBuffer->timeCorrection = getTimeCorrection();  // update the time correction value when pulling sample
       samples.push_back(sampleBuffer);
       while (samples.size() && samples.size() > sampleCapacity) {
         samples.erase(samples.begin());
