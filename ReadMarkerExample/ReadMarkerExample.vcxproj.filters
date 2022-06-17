@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ClCompile Include="src\ofApp.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\main.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxBaseGui.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxButton.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxColorPicker.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxGuiGroup.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxInputField.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxLabel.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxPanel.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxSlider.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxSliderGroup.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxGui\src\ofxToggle.cpp">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxXmlSettings\src\ofxXmlSettings.cpp">
+			<Filter>addons\ofxXmlSettings\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxXmlSettings\libs\tinyxml.cpp">
+			<Filter>addons\ofxXmlSettings\libs</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxXmlSettings\libs\tinyxmlerror.cpp">
+			<Filter>addons\ofxXmlSettings\libs</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxXmlSettings\libs\tinyxmlparser.cpp">
+			<Filter>addons\ofxXmlSettings\libs</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxLSL\src\ofxLSLReceiver.cpp">
+			<Filter>addons\ofxLSL\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxLSL\src\ofxLSLResolver.cpp">
+			<Filter>addons\ofxLSL\src</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="src">
+			<UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons">
+			<UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxGui">
+			<UniqueIdentifier>{4F2A59AF-5F4E-704B-D067-EC13}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxGui\src">
+			<UniqueIdentifier>{645E9533-4DCD-6179-1CDF-CB65}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxXmlSettings">
+			<UniqueIdentifier>{877F005D-13E6-0592-1D97-F2E3}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxXmlSettings\src">
+			<UniqueIdentifier>{CCB2AC63-49D2-977C-CFE8-AEAD}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxXmlSettings\libs">
+			<UniqueIdentifier>{687714A8-1662-FA1C-261F-50F0}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLSL">
+			<UniqueIdentifier>{E430D85D-EA0C-5184-7E9B-BB5E}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLSL\src">
+			<UniqueIdentifier>{763B5CC1-EAEB-7EDB-9673-C1CF}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLSL\libs">
+			<UniqueIdentifier>{4AA100E8-4E65-39BA-41AD-6742}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLSL\libs\labstreaminglayer">
+			<UniqueIdentifier>{52EB1F93-04D9-D92F-9F26-03E3}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLSL\libs\labstreaminglayer\include">
+			<UniqueIdentifier>{CE14D52E-4C21-4A37-981F-9A42}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxLSL\libs\labstreaminglayer\include\lsl">
+			<UniqueIdentifier>{D72C9001-3671-DC09-34EF-3944}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="src\ofApp.h">
+			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxBaseGui.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxButton.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxColorPicker.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxGui.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxGuiGroup.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxGuiUtils.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxInputField.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxLabel.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxPanel.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxSlider.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxSliderGroup.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxGui\src\ofxToggle.h">
+			<Filter>addons\ofxGui\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxXmlSettings\src\ofxXmlSettings.h">
+			<Filter>addons\ofxXmlSettings\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxXmlSettings\libs\tinyxml.h">
+			<Filter>addons\ofxXmlSettings\libs</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxLSL\src\ofxLSL.h">
+			<Filter>addons\ofxLSL\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxLSL\src\ofxLSLReceiver.h">
+			<Filter>addons\ofxLSL\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxLSL\src\ofxLSLResolver.h">
+			<Filter>addons\ofxLSL\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxLSL\src\ofxLSLSender.h">
+			<Filter>addons\ofxLSL\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxLSL\libs\labstreaminglayer\include\lsl\common.h">
+			<Filter>addons\ofxLSL\libs\labstreaminglayer\include\lsl</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxLSL\libs\labstreaminglayer\include\lsl\inlet.h">
+			<Filter>addons\ofxLSL\libs\labstreaminglayer\include\lsl</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxLSL\libs\labstreaminglayer\include\lsl\outlet.h">
+			<Filter>addons\ofxLSL\libs\labstreaminglayer\include\lsl</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxLSL\libs\labstreaminglayer\include\lsl\resolver.h">
+			<Filter>addons\ofxLSL\libs\labstreaminglayer\include\lsl</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxLSL\libs\labstreaminglayer\include\lsl\streaminfo.h">
+			<Filter>addons\ofxLSL\libs\labstreaminglayer\include\lsl</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxLSL\libs\labstreaminglayer\include\lsl\types.h">
+			<Filter>addons\ofxLSL\libs\labstreaminglayer\include\lsl</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxLSL\libs\labstreaminglayer\include\lsl\xml.h">
+			<Filter>addons\ofxLSL\libs\labstreaminglayer\include\lsl</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxLSL\libs\labstreaminglayer\include\lsl_c.h">
+			<Filter>addons\ofxLSL\libs\labstreaminglayer\include</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxLSL\libs\labstreaminglayer\include\lsl_cpp.h">
+			<Filter>addons\ofxLSL\libs\labstreaminglayer\include</Filter>
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<ResourceCompile Include="icon.rc" />
+	</ItemGroup>
+</Project>

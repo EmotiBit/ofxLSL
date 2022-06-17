@@ -1,58 +1,53 @@
 # About ofxLSL
+- EmotiBit can synchronize data with LSL by reading timestamps from a marker stream.
+- A marker stream is an LSL stream, that periodically spits out timestamped markers. These timestamped markers are picked up by EmotiBit, 
+ to sync EmotiBit data to local computer clocks on the LSL network.
+- This version of ofxLSL is based on lsl [`1.14.0`](https://github.com/sccn/liblsl/releases/tag/v1.14.0)
 
-#### ofApp Usage
-- ofxLSL searches for streams based on resInletInfo
-- resInletInfo must be in the form of a proper resolvestreams() argument, given in a below section
-- This is a static variable that should be set in the main.cpp of ofApp in the following format:
+## Example for generating marker stream
+You may generate a marker stream using the `marker.py` example in `markertest/py` folder.
 
-   `const char * ofxLSL::resInletInfo = "name = 'CFL'";`
-   
-- If using the Python Marker Code, the default stream name is CFL
-
-#### Dependency
-- In order to run the example, liblsl64.dll must be in the app bin folder with the compiled .exe
-- Because lsl libaries are written for x64 systems, ensure that Visual Studio Platforms are set to x64
-
-#### Accuracy
-- timestamp,_TS_, is 100% accurate
-- timestampLocal, _TSC_, periodicity is at worst accurate to 1.8ms
-  - average: 19 microseconds
-- localClock, _LC_, periodicity is rather unreliable (>300ms)
-- Can be more accurate if tags are sent and recieved on same computer
-
-#### Python Marker Code
+### About the exmaples
 - **Marker.py**
   - begins stream that alternates printing "Hello" and "World"
   - Tags sent aproximately every 1.5 sec
-- **MarkerCSV.py**
-  - same basic function as Marker.py
-  - writes the timestamps of the tags to an external file, _sentInfo.csv_
-- These files can be used to test the basic functionality of ofxLSL in recieving string tags from a single stream
-- Names of the streams are currently set to "CFL", but can be changed to suit needs
-- _**NOTE:**_ ofxLSL can find a stream based on any resolve stream argument shown in the next section
-  - Whatever is used to sort **must match resInletInfo set in the main of ofApp**
-  
 
-#### resolvestreams() arguments
-- **name**
-  - Name of the stream. Describes the device (or product series) that this stream makes available (for use by programs, experimenters or data analysts)
-  - Cannot be empty.
-- **type**
-  - Content type of the stream
-  - By convention LSL uses the content types defined in the XDF file format specification where applicable (https://github.com/sccn/xdf).
-  - The content type is the preferred way to find streams (as opposed to searching by name).
-- **channel_count** 
-  - Number of channels per sample. This stays constant for the lifetime of the stream.
-  - default = 1
-- **nominal_srate**
-  - The sampling rate (in Hz) as advertised by the data source, regular (otherwise set to IRREGULAR_RATE).
-  - default = IRREGULAR_RATE
-- **channel_format**
-  - Format/type of each channel. If your channels have different formats, consider supplying multiple streams or use the largest type that can hold  them all (such as cf_double64). 
-  - Passed as a string, without the cf_ prefix,
-    - e.g., 'float32' (default cf_float32)
-- **source_id**
-  - Unique identifier of the device or source of the data, if available (such as the serial number).
-  - Critical for system robustness since it allows recipients to recover from failure even after the serving app, device or computer crashes (just by finding a stream with the same source id on the network again).
-  - Highly recommended to always try to provide whatever information can uniquely identify the data source itself.
-  - default = ''
+### Requirements
+To run the `marker.py` example, you will need the following:
+
+- Python
+  - We recommend downloading anaconda to create and manage virtual environments.
+    - Get anaconda from their website: https://www.anaconda.com/
+  - Create an new environment using python 3.7.
+    - Follow the instruction on [docs.anaconda](https://docs.anaconda.com/anaconda/navigator/tutorials/manage-environments/#creating-a-new-environment) to create an environment. 
+- Open anaconda prompt.
+  - You may refer [docs.anaconda](https://docs.anaconda.com/anaconda/install/verify-install/#conda) to do so.
+- Activate the environment created in the previous step.
+  - To activate, type `conda activate your_env_name` to activate.
+- Install the following python packages
+  - psychopy
+    - Run `pip install psychopy` 
+  - liblsl
+    - Follow the instructions on liblsl-Python page: https://github.com/labstreaminglayer/liblsl-Python#installation
+    - Brief instructions,
+      - Run `conda install -c conda-forge liblsl`
+      - Run `pip install pylsl`
+
+### Usage Notes
+- By deafult, the `markey.py`, example generates the LSL stream with the name `DataSyncMarker` and source_id = 12345
+  - You can change the name and stream_id of the marker stream to your needs, but **remember to change the name 
+appropriately at the receiver as well!**
+
+## Example to read LSL markers
+- You may use the `ReadMarkerExample` example to test marker streams on the LSL network.
+  - The Visual studio project files have been included (for easy build on Windows) 
+- This example searches for (and connects to) the specified LSL stream.
+- The stream should be specified in `ofApp.cpp`, as shown below
+  - `receiveString = std::make_shared<ofxLSL::Receiver<string>>("stream_name", "stream_id");`
+  - Example
+    - `receiveString = std::make_shared<ofxLSL::Receiver<string>>("DataSyncMarker", "123345");`
+### Notes
+- For Windows users
+  - Make sure the `lsl.dll` file is in bin folder when running the example.
+
+
