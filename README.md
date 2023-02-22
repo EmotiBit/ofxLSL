@@ -3,6 +3,8 @@
 - A marker stream is an LSL stream, that periodically spits out timestamped markers. These timestamped markers are picked up by EmotiBit, 
  to sync EmotiBit data to local computer clocks on the LSL network.
 - This version of ofxLSL is based on lsl [`1.14.0`](https://github.com/sccn/liblsl/releases/tag/v1.14.0)
+  - The lib files required for LSL to work can be grabbed from the release linked above. Ex. for windows, you will need the `lsl.dll` and for linux you will need the `liblsl-1.14.0-manylinux2010_x64.so`
+
 
 ## Example for generating marker stream
 You may generate a marker stream using the `marker.py` example in `markertest/py` folder.
