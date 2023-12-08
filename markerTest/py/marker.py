@@ -1,17 +1,9 @@
 """Minimal example of how to send event triggers in PsychoPy with
 LabStreamingLayer.
-In this example, the words "hello" and "world" alternate on the screen, and
+In this example, the words "hello" and "world" alternate on the terminal, and
 an event marker is sent with the appearance of each word.
-TO RUN: open in PyschoPy Coder and press 'Run'. Or if you have the psychopy
-Python package in your environment, run `python hello_world.py` in command line.
-ID     EVENT
-------------
-1  --> hello
-2  --> world
-99 -->  test
-------------
 """
-#from psychopy import core, visual, event
+
 from pylsl import StreamInfo, StreamOutlet
 from time import sleep
 
