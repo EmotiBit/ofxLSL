@@ -11,8 +11,9 @@ ID     EVENT
 99 -->  test
 ------------
 """
-from psychopy import core, visual, event
+#from psychopy import core, visual, event
 from pylsl import StreamInfo, StreamOutlet
+from time import sleep
 
 def main():
     """Alternate printing 'Hello' and 'World' and send a trigger each time."""
@@ -32,34 +33,18 @@ def main():
     # Send triggers to test communication.
     for _ in range(5):
         outlet.push_sample(markers['test'])
-        core.wait(0.5)
+        sleep(0.5)
         
-    # Instantiate the PsychoPy window and stimuli.
-    win = visual.Window([800, 600], allowGUI=False, monitor='testMonitor',
-                        units='deg')
-    hello = visual.TextStim(win, text="Hello")
-    world = visual.TextStim(win, text="World")
 
     for i in range(200000):
         if not i % 2:  # If i is even:
-            hello.draw()
-            # # Experiment with win.callOnFlip method. See Psychopy window docs.
-            # win.callOnFlip(outlet.push_sample, markers['hello'])
-            win.flip()
+            print(markers['hello'])
             outlet.push_sample(markers['hello'])
+            sleep(0.5)
         else:
-            world.draw()
-            # win.callOnFlip(outlet.push_sample, markers['world'])
-            win.flip()
+            print(markers['world'])
             outlet.push_sample(markers['world'])
-        if 'escape' in event.getKeys():  # Exit if user presses escape.
-            break
-        core.wait(1.0)  # Display text for 1.0 second.
-        win.flip()
-        core.wait(0.5)  # ISI of 0.5 seconds.
-
-    win.close()
-    core.quit()
+            sleep(0.5)
 
 if __name__ == "__main__":
     main()
