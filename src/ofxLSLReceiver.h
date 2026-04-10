@@ -32,7 +32,7 @@ protected:
   void run();
   virtual void pull() = 0;
 
-  atomic<bool> active;
+  std::atomic<bool> active;
   std::mutex runMutex;
   std::unique_ptr<std::thread> pullThread;
   std::condition_variable pullSignal;
@@ -42,7 +42,7 @@ protected:
   std::string sourceId;
   std::shared_ptr<lsl::stream_inlet> inlet;
 
-  atomic<int> sampleCapacity;
+  std::atomic<int> sampleCapacity;
 };
 
 
