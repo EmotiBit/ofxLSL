@@ -1,4 +1,4 @@
-﻿#include "ofxLSLResolver.h"
+#include "ofxLSLResolver.h"
 
 using namespace lsl;
 using namespace ofxLSL;
@@ -6,7 +6,7 @@ using namespace ofxLSL;
 
 Resolver::Resolver() {
   running = true;
-  resolver = make_unique<continuous_resolver>();
+  resolver = std::make_unique<continuous_resolver>();
   auto libMajor = library_version() / 100;
   auto libMinor = library_version() % 100;
   auto protMajor = lsl_protocol_version() / 100;

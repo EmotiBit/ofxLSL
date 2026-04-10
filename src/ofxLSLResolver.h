@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "lsl_cpp.h"
 #include "ofLog.h"
@@ -38,7 +38,7 @@ private:
 
   bool isEqual(stream_info _infoA, stream_info _infoB);
 
-  atomic<bool> running;
+  std::atomic<bool> running;
   std::unique_ptr<std::thread> runThread;
   std::condition_variable runSignal;
   std::mutex runMutex;
